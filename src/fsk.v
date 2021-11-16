@@ -33,7 +33,6 @@ always @(posedge clk)
   begin
     if (~rst)
       begin
-        data_out <= 0;
         i <= 15;
         cnt <= 0;
       end
@@ -49,7 +48,7 @@ always @(posedge clk)
 
 always @(*)
   begin
-    data_out <= data_in[i] ? clk : cnt[1];
+    data_out <= ~rst ? 0 : data_in[i] ? clk : cnt[1];
   end
 
 endmodule
