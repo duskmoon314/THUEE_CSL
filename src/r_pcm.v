@@ -1,3 +1,17 @@
+/**
+ # Module `r_pcm`
+ 
+ This module decode 8 bits pcm code to 8 bits data
+ 
+ ## Input
+ 
+ - data_in: 8 bits pcm code
+ 
+ ## Output
+ 
+ - data_out: 13 bits data
+ */
+
 module r_pcm(
          input [7:0] data_in,
          output reg [12:0] data_out

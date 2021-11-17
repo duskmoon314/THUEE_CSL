@@ -20,9 +20,9 @@ always #5 clk = ~clk;
 
 wire clk_2, clk_32, clk_512;
 
-clkrst cs(.clk(clk), .rst(rst), .clk_2(clk_2), .clk_32(clk_32), .clk_512(clk_512));
+clkrst #(.OFFSET(5)) cs(.clk(clk), .rst(rst), .clk_2(clk_2), .clk_32(clk_32), .clk_512(clk_512));
 
 initial
-  #1000 $finish;
+  #5000000 $finish;
 
 endmodule

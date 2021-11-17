@@ -1,3 +1,17 @@
+/**
+ # Module `hamming`
+ 
+ This module encode 8 bits data to 12 bits hamming code
+ 
+ ## Input
+ 
+ - data_in: 8 bits data
+ 
+ ## Output
+ 
+ - data_out: 12 bits {data bits, parity bits}
+ */
+
 module hamming (
          input [7:0] data_in,
          output [11:0] data_out

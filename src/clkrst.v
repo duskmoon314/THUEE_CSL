@@ -17,12 +17,14 @@
  
  ## Output
  
- - clk_2: clock that divides clk by 2
- - clk_32: clock that divides clk by 32
- - clk_512: clock that divides clk by 512
+ - clk_2: clock that divides clk by 2 * 2 ^ OFFSET
+ - clk_32: clock that divides clk by 32 * 2 ^ OFFSET
+ - clk_512: clock that divides clk by 512 * 2 ^ OFFSET
  */
 
-module clkrst (
+module clkrst #(
+         parameter OFFSET = 0
+       ) (
          input clk,
          input rst,
          output reg clk_2,
@@ -31,7 +33,7 @@ module clkrst (
          output reset
        );
 
-reg [8:0] cnt;
+reg [8 + OFFSET:0] cnt;
 
 always @(posedge clk)
   begin
@@ -45,9 +47,9 @@ always @(posedge clk)
     else
       begin
         cnt <= cnt + 1;
-        clk_2 <= ~cnt[0];
-        clk_32 <= ~cnt[4];
-        clk_512 <= ~cnt[8];
+        clk_2 <= ~cnt[0 + OFFSET];
+        clk_32 <= ~cnt[4 + OFFSET];
+        clk_512 <= ~cnt[8 + OFFSET];
       end
   end
 

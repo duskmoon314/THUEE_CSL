@@ -1,3 +1,17 @@
+/**
+ # Module `pcm`
+ 
+ This module encode 13 bits data to 8 bits pcm code
+ 
+ ## Input
+ 
+ - data_in: 13 bits data
+ 
+ ## Output
+ 
+ - data_out: 8 bits pcm code
+ */
+
 module pcm (
          input [12:0] data_in,
          output reg [7:0] data_out

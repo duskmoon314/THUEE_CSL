@@ -1,3 +1,20 @@
+/**
+ # Module `r_framer`
+ 
+ This module recognize frame data and get data out of frame
+ 
+ ## Input
+ 
+ - clk: working clock
+ - rst: reset signal
+ - data_in: sequential data
+ 
+ ## Output
+ 
+ - data_out: 12 bits
+ - correct: Whether three frames have been identified
+ */
+
 module r_framer #(
          parameter HEADER = 6
        ) (

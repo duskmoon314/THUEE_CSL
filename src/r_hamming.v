@@ -1,3 +1,17 @@
+/**
+ # Module `r_hamming`
+ 
+ This module decode 12 bits hamming code to 8 bits data
+ 
+ ## Input
+ 
+ - data_in: 12 bits hamming code
+ 
+ ## Output
+ 
+ - data_out: 12 bits data
+ */
+
 module r_hamming(
          input [11:0] data_in,
          output reg [7:0] data_out

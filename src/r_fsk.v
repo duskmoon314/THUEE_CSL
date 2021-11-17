@@ -1,3 +1,23 @@
+/**
+ # Module `r_fsk`
+ 
+ This module generate 16 bits data from input 2-FSK signals.
+ 
+ ## Notice
+ 
+ Clock must be well concerned.
+ 
+ ## Input
+ 
+ - clk: clock whose period is as long as a data bit
+ - rst: reset signal
+ - data_in: sequential FSK signal
+ 
+ ## Output
+ 
+ - data_out: sequential data bit
+ */
+
 module r_fsk(
          input clk,
          input rst,

@@ -4,7 +4,7 @@
 
 /***** Include Modules *****/
 // These lines are used for simulation with iverilog
-// Need to be deleted in Quartus
+// Might need to be deleted in Quartus
 `include "src/clkrst.v"
 `include "src/data_gen.v"
 `include "src/pcm.v"
@@ -36,7 +36,10 @@ module top (
 wire clk_2, clk_32, clk_512, rst;
 parameter HEADER = 6;
 
-clkrst cr(
+// OFFSET need to set a big number like 17
+// if LEDs are binded to data_in / data_out
+clkrst #(.OFFSET(0))
+       cr(
          .clk(sys_clk), .rst(sys_rst),
          .clk_2(clk_2), .clk_32(clk_32), .clk_512(clk_512),
          .reset(rst)
